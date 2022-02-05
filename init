@@ -1,1 +1,3 @@
-#! /bin/bash
+#! /bin/sh
+
+ansible-pull -U https://github.com/blntrsz/init.git --ask-value-pass --ask-become-pass

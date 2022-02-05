@@ -4,9 +4,9 @@
     dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
     personal: "{{ lookup('env', 'HOME') }}/personal"
   pre_tasks:
-  - name: Update Pacman
+  - name: Update packages
     become: true
-    pacman:
+    ansible.builtin.package:
         update_cache: yes
         upgrade: yes
     tags:

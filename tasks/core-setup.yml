@@ -1,7 +1,9 @@
 - name: Install System Packages 1 (build-essential, cmake, pkg-config, pthread)
   become: true
-  pacman:
-    name: ["cmake", "pkg-config"]
+  ansible.builtin.package:
+    name: 
+      - "cmake"
+      - "pkg-config"
   tags:
     - install
     - neovim
@@ -9,8 +11,11 @@
 
 - name: Install System Packages 2 (lua, unzip, libtool, libtool-bin, gettext)
   become: true
-  pacman:
-    name: ["unzip", "libtool", "gettext"]
+  ansible.builtin.package:
+    name: 
+      - "unzip"
+      - "libtool"
+      - "gettext"
   tags:
     - install
     - neovim
@@ -18,16 +23,25 @@
 
 - name: Install System Packages 3 (the rest)
   become: true
-  pacman:
-    name: [ "compton", "curl", "htop", "lsof", "ccache", "dconf-editor", "pavucontrol", "moreutils" ]
+  ansible.builtin.package:
+    name: 
+      - "compton"
+      - "curl"
+      - "htop"
+      - "lsof"
+      - "ccache"
+      - "dconf-editor"
+      - "pavucontrol"
+      - "moreutils"
   tags:
     - install
     - core
 
 - name: Install Clang
   become: true
-  pacman:
-    name: ["clang"]
+  ansible.builtin.package:
+    name: 
+      - "clang"
   tags:
     - install
     - neovim
