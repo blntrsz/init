@@ -2,6 +2,15 @@
 
 > An automated way to initialize my setup
 
+
+## Clone repo 
+
+```
+git clone https://github.com/blntrsz/init.git
+```
+
+## Run ansible
+
 ```bash
-curl https://raw.githubusercontent.com/blntrsz/init/main/init | sh
+sh init
 ```
